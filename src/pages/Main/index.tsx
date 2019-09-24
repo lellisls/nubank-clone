@@ -10,8 +10,10 @@ import {
   CardFooter,
   Annotation
 } from "./styles";
+
 import Header from "../../components/Header";
 import Tabs from "../../components/Tabs";
+import Menu from "../../components/Menu";
 
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -35,6 +37,7 @@ export default function Main() {
             </Annotation>
           </CardFooter>
         </Card>
+        <Menu></Menu>
       </Content>
       <Tabs></Tabs>
     </Container>
