@@ -1,12 +1,28 @@
 import React from "react";
 
-import { Container, Code, NavItem, Nav, NavText, SignOutButton, SignOutButtonText } from "./styles";
+import {
+  Container,
+  Code,
+  NavItem,
+  Nav,
+  NavText,
+  SignOutButton,
+  SignOutButtonText
+} from "./styles";
+
 import QRCode from "react-native-qrcode";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-export default function Menu() {
+export default function Menu({ translateY }) {
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: translateY.interpolate({
+          inputRange: [0, 150],
+          outputRange: [0, 1]
+        })
+      }}
+    >
       <Code>
         <QRCode
           value="http://pudim.com.br"
@@ -34,9 +50,7 @@ export default function Menu() {
         </NavItem>
       </Nav>
       <SignOutButton onPress={() => {}}>
-          <SignOutButtonText>
-              SAIR DO APP
-          </SignOutButtonText>
+        <SignOutButtonText>SAIR DO APP</SignOutButtonText>
       </SignOutButton>
     </Container>
   );
